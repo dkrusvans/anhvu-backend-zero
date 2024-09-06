@@ -1,5 +1,6 @@
 
-
+//proccess data
+//call model
 const getHomepage = (req, res) => {
     res.send('Hello World do hoang anh vu 123 456')
 }
