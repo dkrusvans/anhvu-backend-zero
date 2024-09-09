@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="topnav">
+        <a href="/" class="active">Home</a>
+        <a href="/create" >Đăng Ký</a>
+        <a href="/khsx">Kế hoạch sản xuất</a>
+        <a href="#about">About</a>
+    </div>
+    
+    <div class="table-container">
+        <%= JSON.stringify(listUsers) %>
+        <div class="title">List Users</div>
+        <table class="styled-table">
+        <thead>
+            <tr>
+                <th>UserName</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Dom</td>
+                <td>6000</td>
+                <td>123</td>
+                <td>
+                    <div class="multi-button">
+                        <button class="button" id="cut"><span>      Edit</span></button>
+                        <button class="button" id="copy"></><span>      Delete</span></button>
+                        
+                    </div>
+                </td>
+            </tr>
+            <tr >
+                <td>Melissa</td>
+                <td>5150</td>
+                <td>602300</td>
+                <td>
+                    <div class="multi-button">
+                        <button class="button" id="cut"><span>      Edit</span></button>
+                        <button class="button" id="copy"></><span>      Delete</span></button>
+                        
+                    </div>
+                </td>
+                </td>
+            </tr>
+            
+        </tbody>
+        </table>
+    </div>
+    <script src="https://kit.fontawesome.com/ade0b34805.js" crossorigin="anonymous"></script>
+</body>
+</html>

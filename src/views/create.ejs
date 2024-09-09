@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo mới nhân viên</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/create" class="active">Đăng Ký</a>
+        <a href="/khsx">Kế hoạch sản xuất</a>
+        <a href="#about">About</a>
+      </div>
+    <div class="container">
+            <h2>Signup Form</h2>
+            <form id="signupForm" action="/create-user" method="post">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" >
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" >
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" >
+                    <span id="passwordError" class="error"></span>
+                    <div class="password-strength" id="passwordStrength"></div>
+                </div>
+                
+                <button type="submit">Signup</button>
+            </form>
+            <p id="message"></p>
+    </div>
+    
+</body>
+</html>
