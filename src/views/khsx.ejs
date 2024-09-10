@@ -2,42 +2,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nhà Máy Kỳ Nam II</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+    
     <div class="topnav">
         <a href="/" >Home</a>
         <a href="/create" >Đăng Ký</a>
+        <a href="/createlnx">Nhập Lệnh</a>
         <a href="/khsx" class="active">Kế hoạch sản xuất</a>
         <a href="#about">About</a>
     </div>
     
     <div class="table-container">
-        <form action=""></form>
-        <div class="title">List Users</div>
+        <!-- <form action=""></form> -->
+        <div class="title">List LNX</div>
         <table class="styled-table">
         <thead>
             <tr>
-                <th>UserName</th>
-                <th>Email</th>
-                <th>Password</th>
+                <th>Khách hàng</th>
+                <th>Loại nhập xuất</th>
+                <th>Thời gian nhận hàng</th>
+                <th>Tên vật tư</th>
+                <th>Quy cách</th>
+                <th>Số lượng</th>
+                <th>Trọng lượng</th>
+                <th>Đơn giá</th>
+                <th>CNKD</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
+            <% listLnxs.forEach(function(lnx) { %>
             <tr>
-                <td>Dom</td>
-                <td>6000</td>
-                <td>123</td>
-            </tr>
-            <tr class="active-row">
-                <td>Melissa</td>
-                <td>5150</td>
-                <td>602300</td>
+                
+                <td><%= lnx.khachhang %></td>
+                <td><%= lnx.loainhapxuat %></td>
+                <td><%= lnx.thoigiannhanhang %></td>
+                <td><%= lnx.tenvattu %></td>
+                <td><%= lnx.quycach %></td>
+                <td><%= lnx.soluong %></td>
+                <td><%= lnx.trongluong %></td>
+                <td><%= lnx.dongia %></td>
+                <td><%= lnx.cbkd %></td>
+                <td>
+                    <div class="multi-button">
+                        <a href="/update2/<%= lnx.id %>"><button class="button" id="cut"><span>      Edit</span></button></a>
+                        <button class="button" id="copy"></><span>      Delete</span></button>
+                        
+                    </div>
+                </td>
             </tr>
             
+            <% }); %>
         </tbody>
         </table>
     </div>
+    <script src="https://kit.fontawesome.com/ade0b34805.js" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="en"></html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+    <!-- <%= JSON.stringify(userEdit) %> --> 
     <div class="topnav">
         <a href="/">Home</a>
         <a href="/create" class="active">Đăng Ký</a>
@@ -14,21 +15,21 @@
         <a href="#about">About</a>
       </div>
     <div class="container">
-            <h2>Signup Form</h2>
+            <h2>Update Form</h2>
             <form id="signupForm" action="/create-user" method="post">
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" id="username" name="username" >
+                    <input type="text" value="<%= userEdit.username %>" name="username" >
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" >
+                    <input type="email" value="<%= userEdit.email %>" name="email" >
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" >
-                    <span id="passwordError" class="error"></span>
-                    <div class="password-strength" id="passwordStrength"></div>
+                    <input type="password" value="<%= userEdit.password %>" name="password" >
+                    
+                    
                 </div>
                 
                 <button class="button-2" type="submit">Signup</button>

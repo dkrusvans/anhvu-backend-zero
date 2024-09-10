@@ -68,10 +68,9 @@ input {
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: larger;
 }
 
-.button-2 {
+/* button {
     width: 100%;
     padding: 10px;
     background-color: #5cb85c;
@@ -81,9 +80,9 @@ input {
     cursor: pointer;
 }
 
-.button-2:hover {
+button:hover {
     background-color: #4cae4c;
-}
+} */
 
 .table-container {
     padding: 15px 20px;

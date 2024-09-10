@@ -2,19 +2,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nhà Máy Kỳ Nam II</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
     <div class="topnav">
         <a href="/" class="active">Home</a>
         <a href="/create" >Đăng Ký</a>
+        <a href="/createlnx" >Nhập Lệnh</a>
         <a href="/khsx">Kế hoạch sản xuất</a>
         <a href="#about">About</a>
     </div>
     
     <div class="table-container">
-        <%= JSON.stringify(listUsers) %>
+        <!-- <%= JSON.stringify(listUsers) %> -->
         <div class="title">List Users</div>
         <table class="styled-table">
         <thead>
@@ -26,32 +27,35 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Dom</td>
-                <td>6000</td>
-                <td>123</td>
-                <td>
-                    <div class="multi-button">
-                        <button class="button" id="cut"><span>      Edit</span></button>
-                        <button class="button" id="copy"></><span>      Delete</span></button>
-                        
-                    </div>
-                </td>
-            </tr>
-            <tr >
-                <td>Melissa</td>
-                <td>5150</td>
-                <td>602300</td>
-                <td>
-                    <div class="multi-button">
-                        <button class="button" id="cut"><span>      Edit</span></button>
-                        <button class="button" id="copy"></><span>      Delete</span></button>
-                        
-                    </div>
-                </td>
-                </td>
-            </tr>
             
+            <!-- <% for (let i=0; i < listUsers.length; i++) { %>
+                <tr>
+                    <td><%= listUsers[i].username %></td>
+                    <td><%= listUsers[i].email %></td>
+                    <td><%= listUsers[i].password %></td>
+                    <td>
+                        <div class="multi-button">
+                            <button class="button" id="cut"><span>      Edit</span></button>
+                            <button class="button" id="copy"></><span>      Delete</span></button>
+                            
+                        </div>
+                    </td>
+                </tr>
+            <% } %> -->
+            <% listUsers.forEach(function(user) { %>
+                <tr>
+                    <td><%= user.username %></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.password %></td>
+                    <td>
+                        <div class="multi-button">
+                            <a href="/update/<%= user.id %>"><button class="button" id="cut"><span>      Edit</span></button></a>
+                            <button class="button" id="copy"></><span><a href="">      Delete</a></span></button>
+                            
+                        </div>
+                    </td>
+                </tr>
+            <% }); %>
         </tbody>
         </table>
     </div>

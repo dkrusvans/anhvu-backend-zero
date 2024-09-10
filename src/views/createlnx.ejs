@@ -1,0 +1,63 @@
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhà Máy Kỳ Nam II</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/create" >Đăng Ký</a>
+        <a href="/createlnx" class="active">Nhập Lệnh</a>
+        <a href="/khsx">Kế hoạch sản xuất</a>
+        <a href="#about">About</a>
+      </div>
+    <div class="container">
+            <h2>Tạo mới lệnh nhập xuất</h2>
+            <form id="signupForm" action="/create-lnx" method="post">
+                <div class="form-group">
+                    <label for="khachhang">Khách hàng</label>
+                    <input type="text" name="khachhang" >
+                </div>
+                <div class="form-group">
+                    <label for="loainhapxuat">Loại nhập xuất</label>
+                    <input type="text" name="loainhapxuat" >
+                </div>
+                <div class="form-group">
+                    <label for="thoigiannhanhang">Thời gian nhận hàng</label>
+                    <input type="text" name="thoigiannhanhang" >
+                </div>
+                <div class="form-group">
+                    <label for="tenvattu">Tên vật tư</label>
+                    <input type="text" name="tenvattu" >
+                </div>
+                <div class="form-group">
+                    <label for="quycach">Quy cách</label>
+                    <input type="text" name="quycach" >
+                </div>
+                <div class="form-group">
+                    <label for="soluong">Số lượng</label>
+                    <input type="text" name="soluong" >
+                </div>
+                <div class="form-group">
+                    <label for="trongluong">Trọng lượng</label>
+                    <input type="text" name="trongluong" >
+                </div>
+                <div class="form-group">
+                    <label for="dongia">Đơn giá</label>
+                    <input type="text" name="dongia" >
+                </div>
+                <div class="form-group">
+                    <label for="cbkd">CBKD</label>
+                    <input type="text" name="cbkd" >
+                </div>
+                
+                
+                <button class="button-2" type="submit">Signup</button>
+            </form>
+            <p id="message"></p>
+    </div>
+    
+</body>
+</html>
