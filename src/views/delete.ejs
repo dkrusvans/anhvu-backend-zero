@@ -15,8 +15,8 @@
         <a href="#about">About</a>
       </div>
     <div class="container">
-            <h2>Update Form</h2>
-            <form id="signupForm" action="/update-user" method="post">
+            <h2>Delete Form</h2>
+            <form id="signupForm" action="/delete-user" method="POST">
                 <div class="form-group d-none">
                     <label for="id">ID</label>
                     <input type="text" value="<%= userEdit.id %>" name="userId" >
@@ -25,18 +25,9 @@
                     <label for="username">Username</label>
                     <input type="text" value="<%= userEdit.username %>" name="username" >
                 </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" value="<%= userEdit.email %>" name="email" >
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" value="<%= userEdit.password %>" name="password" >
-                    
-                    
-                </div>
                 
-                <button class="button-2" type="submit">Signup</button>
+                
+                <button class="button-2" type="submit">Confirm</button>
             </form>
             <p id="message"></p>
     </div>

@@ -15,7 +15,11 @@
       </div>
     <div class="container">
             <h2>Sửa lệnh nhập xuất</h2>
-            <form id="signupForm" action="/create-lnx" method="post">
+            <form id="signupForm" action="/update-lnx" method="post">
+                <div class="form-group d-none">
+                    <label for="id">id</label>
+                    <input type="text" value="<%= lnxEdit.id %>" name="lnxId" >
+                </div>
                 <div class="form-group">
                     <label for="khachhang">Khách hàng</label>
                     <input type="text" value="<%= lnxEdit.khachhang %>" name="khachhang" >

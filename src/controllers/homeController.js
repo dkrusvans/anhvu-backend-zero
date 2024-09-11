@@ -1,7 +1,9 @@
 const connection = require('../config/database');
 
 
-const { getAllUsers, getAllLnxs, getUsersById, getLnxById } = require('../services/CRUDService');
+const { getAllUsers, getAllLnxs, getUsersById, getLnxById,
+    updateUsersById, updateLnxById, deleteUserById
+ } = require('../services/CRUDService');
 
 
 const postCreateUser = async (req, res) => {
@@ -65,8 +67,35 @@ const getUpdateLnxPage = async (req, res) => {
     res.render('editlnx.ejs', { lnxEdit: lnx }); // x<-y gan bien
 }
 
+const postUpdateUser = async (req, res) => {
+    
+    let { userId, username, email, password } = req.body;
+    await updateUsersById(username, email, password, userId);
+    res.redirect('/');
+}
+const postDeleteUser = async (req,res) => {
+    const userId = req.params.id;
+    let user = await getUsersById(userId);
+    res.render('delete.ejs',{userEdit: user})
+}
+const postHandleRemoveUser = async (req,res) => {
+    const id = req.body.userId;
+    await deleteUserById(id);
+        res.redirect('/');
+}
+
+const postUpdateLnx = async (req, res) => {
+    
+    let { lnxId, khachhang, loainhapxuat, thoigiannhanhang,
+        tenvattu, quycach, soluong, trongluong, dongia, cbkd } = req.body;
+    await updateLnxById(khachhang, loainhapxuat, thoigiannhanhang,
+        tenvattu, quycach, soluong, trongluong, dongia, cbkd, lnxId);
+    res.redirect('/khsx');
+}
+
 module.exports = {
     getHomepage, postCreateUser,
     getCreatePage, getKhsxPage, getLnxPage, postCreateLnx,
-    getUpdatePage, getUpdateLnxPage, getLenhnhapxuatPage
+    getUpdatePage, getUpdateLnxPage, getLenhnhapxuatPage,
+    postUpdateUser, postUpdateLnx, postDeleteUser, postHandleRemoveUser
 }

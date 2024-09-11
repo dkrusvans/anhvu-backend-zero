@@ -50,8 +50,8 @@
                     <td>
                         <div class="multi-button">
                             <a href="/update/<%= user.id %>"><button class="button" id="cut"><span>      Edit</span></button></a>
-                            <button class="button" id="copy"></><span><a href="">      Delete</a></span></button>
                             
+                            <form action="/delete-user/<%= user.id %>" method="post"><button class="button" id="copy"></><span>      Delete</span></button></form>
                         </div>
                     </td>
                 </tr>
