@@ -3,7 +3,7 @@ const express = require('express')
 const configViewEngine = require('./config/viewEngine');
 const webRoutes = require('./routes/web');
 const connection = require('./config/database');
-const mongoose = require('mongoose');
+const Kitten = require('./model/Kitten');
 const { name } = require('ejs');
 
 const app = express();
@@ -20,10 +20,6 @@ configViewEngine(app);
 //create route
 app.use('/', webRoutes);
 
-const kittySchema = new mongoose.Schema({
-    name: String
-});
-const Kitten = mongoose.model('Kitten', kittySchema);
 const cat = new Kitten({ name: 'Lenhnhapxuat' });
 cat.save();
 
