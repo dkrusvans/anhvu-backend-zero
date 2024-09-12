@@ -13,10 +13,8 @@ const postCreateUser = async (req, res) => {
     await User.create({
         username, email, password
     })
-    // let [results, fields] = await connection.query(
-    //     `INSERT INTO Users (username,email,password)VALUES (?,?,?)`, [username, email, password]);
-    //         // console.log('check results: ', results);
-            res.send('Create user succeed !')
+    
+    res.send('Create user succeed !')
 }
 
 const postCreateLnx = async (req, res) => {
@@ -80,13 +78,26 @@ const postUpdateUser = async (req, res) => {
 }
 const postDeleteUser = async (req,res) => {
     const userId = req.params.id;
-    let user = await getUsersById(userId);
+    
+    let user = await User.findById(userId);
     res.render('delete.ejs',{userEdit: user})
+}
+const postDeleteLnx = async (req,res) => {
+    const lnxId = req.params.id;
+    
+    let lnx = await Lnx.findById(lnxId);
+    res.render('deletelnx.ejs',{lnxEdit: lnx})
 }
 const postHandleRemoveUser = async (req,res) => {
     const id = req.body.userId;
-    await deleteUserById(id);
+    await User.deleteOne({ _id:id })
         res.redirect('/');
+}
+
+const postHandleRemoveLnx = async (req,res) => {
+    const id = req.body.lnxId;
+    await Lnx.deleteOne({ _id:id })
+        res.redirect('/khsx');
 }
 
 const postUpdateLnx = async (req, res) => {
@@ -112,5 +123,6 @@ module.exports = {
     getHomepage, postCreateUser,
     getCreatePage, getKhsxPage, getLnxPage, postCreateLnx,
     getUpdatePage, getUpdateLnxPage, getLenhnhapxuatPage,
-    postUpdateUser, postUpdateLnx, postDeleteUser, postHandleRemoveUser
+    postUpdateUser, postUpdateLnx, postDeleteUser, postHandleRemoveUser,
+    postHandleRemoveLnx, postDeleteLnx
 }

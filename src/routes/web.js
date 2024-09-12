@@ -4,7 +4,8 @@ const { getHomepage, postCreateUser,
     getCreatePage, getKhsxPage, getLnxPage, postCreateLnx,
     getUpdatePage, getLenhnhapxuatPage,
     getUpdateLnxPage, postUpdateUser, postUpdateLnx, postDeleteUser,
-    postHandleRemoveUser
+    postHandleRemoveUser, postDeleteLnx,
+    postHandleRemoveLnx
     
 } = require('../controllers/homeController');
 
@@ -19,7 +20,9 @@ router.post('/create-user', postCreateUser);
 router.post('/create-lnx', postCreateLnx);
 router.post('/update-user', postUpdateUser);
 router.post('/delete-user/:id', postDeleteUser);
+router.post('/delete-lnx/:id', postDeleteLnx);
 router.post('/delete-user/', postHandleRemoveUser);
+router.post('/delete-lnx/', postHandleRemoveLnx);
 router.post('/update-lnx', postUpdateLnx);
   
 module.exports = router;

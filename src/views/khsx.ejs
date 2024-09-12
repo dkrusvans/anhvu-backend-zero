@@ -49,7 +49,7 @@
                 <td>
                     <div class="multi-button">
                         <a href="/update2/<%= lnx.id %>"><button class="button" id="cut"><span>      Edit</span></button></a>
-                        <button class="button" id="copy"></><span>      Delete</span></button>
+                        <form action="/delete-lnx/<%= lnx.id %>" method="post"><button class="button" id="copy"></><span>      Delete</span></button></form>
                         
                     </div>
                 </td>

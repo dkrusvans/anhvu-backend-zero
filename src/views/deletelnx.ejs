@@ -1,0 +1,36 @@
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhà Máy Kỳ Nam II</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/create" >Đăng Ký</a>
+        <a href="/createlnx" class="active">Nhập Lệnh</a>
+        <a href="/khsx">Kế hoạch sản xuất</a>
+        <a href="#about">About</a>
+      </div>
+    <div class="container">
+            <h2>Delete lệnh nhập xuất</h2>
+            <form id="signupForm" action="/delete-lnx" method="POST">
+                <div class="form-group d-none">
+                    <label for="id">ID</label>
+                    <input type="text" value="<%= lnxEdit.id %>" name="lnxId" >
+                </div>
+                <div class="form-group">
+                    <label for="khachhang">Khách hàng</label>
+                    <input type="text" value="<%= lnxEdit.khachhang %>" name="khachhang" >
+                </div>
+                
+                
+                
+                <button class="button-2" type="submit">DELETE</button>
+            </form>
+            <p id="message"></p>
+    </div>
+    
+</body>
+</html>
