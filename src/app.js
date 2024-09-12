@@ -3,7 +3,7 @@ const express = require('express')
 const configViewEngine = require('./config/viewEngine');
 const webRoutes = require('./routes/web');
 const connection = require('./config/database');
-const Kitten = require('./model/Kitten');
+
 const { name } = require('ejs');
 
 const app = express();
@@ -20,8 +20,7 @@ configViewEngine(app);
 //create route
 app.use('/', webRoutes);
 
-const cat = new Kitten({ name: 'Lenhnhapxuat' });
-cat.save();
+
 
 (async() => {
     try {

@@ -4,15 +4,18 @@ const connection = require('../config/database');
 const { getAllUsers, getAllLnxs, getUsersById, getLnxById,
     updateUsersById, updateLnxById, deleteUserById
  } = require('../services/CRUDService');
-
+const User = require("../model/user");
+const Lnx = require('../model/createlnxmodel');
 
 const postCreateUser = async (req, res) => {
     
     let { username, email, password } = req.body;
-    
-    let [results, fields] = await connection.query(
-        `INSERT INTO Users (username,email,password)VALUES (?,?,?)`, [username, email, password]);
-            // console.log('check results: ', results);
+    await User.create({
+        username, email, password
+    })
+    // let [results, fields] = await connection.query(
+    //     `INSERT INTO Users (username,email,password)VALUES (?,?,?)`, [username, email, password]);
+    //         // console.log('check results: ', results);
             res.send('Create user succeed !')
 }
 
@@ -20,13 +23,10 @@ const postCreateLnx = async (req, res) => {
     
     let { khachhang, loainhapxuat, thoigiannhanhang,
         tenvattu, quycach, soluong, trongluong, dongia, cbkd } = req.body;
-    
-    let [results, fields] = await connection.query(
-        `INSERT INTO Lenhnhapxuat (khachhang, loainhapxuat, thoigiannhanhang,
-        tenvattu, quycach, soluong, trongluong, dongia, cbkd)VALUES (?,?,?,?,?,?,?,?,?)`,
-        [khachhang, loainhapxuat, thoigiannhanhang,
-            tenvattu, quycach, soluong, trongluong, dongia, cbkd]);
-            // console.log('check results: ', results);
+    await Lnx.create({
+        khachhang, loainhapxuat, thoigiannhanhang,
+        tenvattu, quycach, soluong, trongluong, dongia, cbkd
+    })
             res.send('Thêm mới Lệnh nhạp xuất succeed !')
 }
 
@@ -44,33 +44,38 @@ const getKhsxPage = (req,res) => {
 //proccess data
 //call model
 const getHomepage = async(req, res) => {
-    let results = await getAllUsers();
+    let results = await User.find({});
     
     return res.render('home.ejs', { listUsers: results })
 }
 
 const getLenhnhapxuatPage = async(req, res) => {
-    let results = await getAllLnxs();
+    let results = await Lnx.find({});
     
     return res.render('khsx.ejs', { listLnxs: results })
 }
 
 const getUpdatePage = async (req, res) => {
     const userId = req.params.id;
-    let user = await getUsersById(userId);
+    let user = await User.findById(userId);
     res.render('edit.ejs', { userEdit: user }); // x<-y gan bien
 }
 
 const getUpdateLnxPage = async (req, res) => {
     const lnxId = req.params.id;
-    let lnx = await getLnxById(lnxId);
+    let lnx = await Lnx.findById(lnxId);
     res.render('editlnx.ejs', { lnxEdit: lnx }); // x<-y gan bien
 }
 
 const postUpdateUser = async (req, res) => {
     
     let { userId, username, email, password } = req.body;
-    await updateUsersById(username, email, password, userId);
+    await User.updateOne(
+        { _id: userId },
+        { username: username },
+        { email: email},
+        { password: password}
+    );
     res.redirect('/');
 }
 const postDeleteUser = async (req,res) => {
@@ -88,8 +93,18 @@ const postUpdateLnx = async (req, res) => {
     
     let { lnxId, khachhang, loainhapxuat, thoigiannhanhang,
         tenvattu, quycach, soluong, trongluong, dongia, cbkd } = req.body;
-    await updateLnxById(khachhang, loainhapxuat, thoigiannhanhang,
-        tenvattu, quycach, soluong, trongluong, dongia, cbkd, lnxId);
+    await Lnx.updateOne(
+        {_id:lnxId},
+        {khachhang:khachhang},
+        {loainhapxuat:loainhapxuat},
+        {thoigiannhanhang:thoigiannhanhang},
+        {tenvattu:tenvattu},
+        {quycach:quycach},
+        {soluong:soluong},
+        {trongluong:trongluong},
+        {dongia:dongia},
+        {cbkd:cbkd}
+        );
     res.redirect('/khsx');
 }
 
