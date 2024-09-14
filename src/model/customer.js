@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
-
+const mongoose_delete = require('mongoose-delete');
 
 // Định dạng database kiểu dữ liệu
 const customerSchema = new mongoose.Schema({
     
     name: {
         type: String,
-        require: true
+        required: true
     },
     address: String,
     phone: String,
@@ -19,6 +19,7 @@ const customerSchema = new mongoose.Schema({
 );
 
 //chỉnh sửa table
+customerSchema.plugin(mongoose_delete, { overrideMethods: 'all' });
 const Customer = mongoose.model('Customer', customerSchema);
 
 module.exports = Customer;
