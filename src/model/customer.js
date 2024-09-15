@@ -15,11 +15,20 @@ const customerSchema = new mongoose.Schema({
     description: String,
     
 },
-    { timestamps: true }
+    {
+        timestamps: true, //createAt updateAt
+        
+        // statics: {
+        //     deleteById(name) {
+        //       return this.find({ name: new RegExp(name, 'i') });
+        //     }
+        //   }
+    } 
 );
 
-//chỉnh sửa table
+//soft delete
 customerSchema.plugin(mongoose_delete, { overrideMethods: 'all' });
+//chỉnh sửa table
 const Customer = mongoose.model('Customer', customerSchema);
 
 module.exports = Customer;
