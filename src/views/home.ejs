@@ -1,0 +1,208 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span class="icon">
+                                <ion-icon name="logo-apple"></ion-icon>
+                            </span>
+                            <span class="title">NM Kỳ Nam</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <span class="icon">
+                                <ion-icon name="home-outline"></ion-icon>
+                            </span>
+                            <span class="title">Tạo mới Lệnh nhập xuất</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <span class="icon">
+                                <ion-icon name="receipt-outline"></ion-icon>
+                            </span>
+                            <span class="title">Kế hoạch sản xuất</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <span class="icon">
+                                <ion-icon name="business-outline"></ion-icon>
+                            </span>
+                            <span class="title">Tồn kho Inox Cuộn</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <span class="icon">
+                                <ion-icon name="settings-outline"></ion-icon>
+                            </span>
+                            <span class="title">Setting</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Main -->
+            <div class="main">
+                    <div class="topbar">
+                        <div class="toggle">
+                            <ion-icon name="menu-outline"></ion-icon>
+                        </div>
+                        <div class="search">
+                            <label>
+                                <input type="text" placeholder="Search here">
+                                <ion-icon name="search-outline"></ion-icon>
+                            </label>
+                        </div>
+                        <div class="user">
+                            <img src="/images/1.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="container2">
+                        <form id="contact" action="/create-lnx" method="post">
+                            <h3>Lệnh Nhập Xuất</h3>
+                            <h4>Contact us today, and get reply with in 24 hours!</h4>
+                            <fieldset>
+                              <input placeholder="Tên Khách hàng" type="text" tabindex="1" name="khachhang">
+                            </fieldset>
+                            <fieldset>
+                              <input placeholder="Loại Nhập Xuất" type="text" tabindex="2" name="loainhapxuat">
+                            </fieldset>
+                            <fieldset>
+                              <input placeholder="Thời gian nhận hàng" type="text" tabindex="3" name="thoigiannhanhang">
+                            </fieldset>
+                            <fieldset>
+                                <input placeholder="Tên vật tư" type="text" tabindex="4" name="tenvattu">
+                            </fieldset>
+                            <fieldset>
+                                <input placeholder="Quy Cách" type="text" tabindex="5" name="quycach">
+                            </fieldset>
+                            <fieldset>
+                                <input placeholder="Số lượng" type="text" tabindex="6" name="soluong">
+                            </fieldset>
+                            <fieldset>
+                                <input placeholder="Trọng lượng" type="text" tabindex="7" name="trongluong">
+                            </fieldset>
+                            <fieldset>
+                                <input placeholder="Đơn giá" type="text" tabindex="8" name="dongia">
+                            </fieldset>
+                            <fieldset>
+                                <input placeholder="CBKD" type="text" tabindex="9" name="cbkd">
+                            </fieldset>
+                            <fieldset>
+                              <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                            </fieldset>
+                        </form>
+                    </div>
+                    
+                <!-- CARD -->
+                <!-- <div class="cardBox">
+                    
+                    <div class="card">
+                        <div>
+                            <div class="numbers">1.504</div>
+                            <div class="cardName">Daily Views</div>
+                        </div>
+                        
+                        <div class="iconBx">
+                            <ion-icon name="diamond-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <div class="numbers">1.504</div>
+                            <div class="cardName">Daily Views</div>
+                        </div>
+                        <div class="iconBx">
+                            <ion-icon name="diamond-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <div class="numbers">1.504</div>
+                            <div class="cardName">Daily Views</div>
+                        </div>
+                        <div class="iconBx">
+                            <ion-icon name="diamond-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <div class="numbers">1.504</div>
+                            <div class="cardName">Daily Views</div>
+                        </div>
+                        <div class="iconBx">
+                            <ion-icon name="diamond-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- Order Detail List -->
+                <!-- <div class="details">
+                    <div class="recentOrders">
+                        <div class="cardHeader">
+                            <h2>Recent Order</h2>
+                            <a href="#" class="btn">View All</a>
+                        </div>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Price</td>
+                                    <td>Payment</td>
+                                    <td>Status</td>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Star Refrigerator</td>
+                                    <td>$1200</td>
+                                    <td>Paid</td>
+                                    <td><span class="status delivered">Delivered</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Star Refrigerator</td>
+                                    <td>$1200</td>
+                                    <td>Paid</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Star Refrigerator</td>
+                                    <td>$1200</td>
+                                    <td>Paid</td>
+                                    <td><span class="status return">Return</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Star Refrigerator</td>
+                                    <td>$1200</td>
+                                    <td>Paid</td>
+                                    <td><span class="status inprogress">In Progress</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div> -->
+            </div>
+    </div>
+    <script src="/js/main.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

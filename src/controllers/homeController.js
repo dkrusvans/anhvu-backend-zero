@@ -1,13 +1,22 @@
-
+const connection = require('../config/database');
 
 const getHomepage = (req, res) => {
-    res.send('Hello World do hoang anh vu 123 456')
+    // let users = [];
+    // connection.query(
+    //     'SELECT * FROM Lenhnhapxuat u',
+    //     function (err, results, fields) {
+    //         users = results
+    //         // console.log("check results= ", users);
+    //         res.send(JSON.stringify(users))
+    //     }
+    // );
+    return res.render('home.ejs')
 }
 
-const getA = (req,res) => {
-    res.render('sample.ejs')
+const postCreateLnx = (req,res) => {
+    res.send('Create new Lnx')
 }
 
 module.exports = {
-    getHomepage,getA
+    getHomepage,postCreateLnx
 }
