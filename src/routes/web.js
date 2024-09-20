@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router()
-const { getHomepage, postCreateLnx } = require('../controllers/homeController');
+const { getHomepage, postCreateLnx,getCreateLnx } = require('../controllers/homeController');
 
 router.get('/', getHomepage);
-router.post('/create-lnx', postCreateLnx );
+router.get('/create', getCreateLnx);
+router.post('/create-lnx', postCreateLnx);
 
   
 module.exports = router;

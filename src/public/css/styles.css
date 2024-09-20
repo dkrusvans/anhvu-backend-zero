@@ -98,6 +98,7 @@ body{
     line-height: 30px;
     text-align: start;
     white-space: nowrap;
+    
 }
 
 .navigation ul li:hover a::before,
@@ -313,12 +314,12 @@ body{
 .details .recentOrders table tr td:last-child{
     text-align: end;
 }
-.details .recentOrders table tr td:nth-child(2){
+/* .details .recentOrders table tr td:nth-child(2){
     text-align: end;
 }
 .details .recentOrders table tr td:nth-child(3){
     text-align: center;
-}
+} */
 .status.delivered{
     padding: 2px 4px;
     background: #8de02c;
@@ -356,7 +357,7 @@ body{
 	max-width:400px;
 	width:100%;
     right: 600px;
-	margin:0 auto;
+	margin: 15 auto;
 	position:relative;
     background: var(--white);
     
