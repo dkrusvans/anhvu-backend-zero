@@ -13,6 +13,8 @@
     --gray:#f5f5f5;
     --black1:#222;
     --black2:#999;
+    --green:#1ecd97;
+    --gray: #bbbbbb;
 }
 
 body{
@@ -255,25 +257,38 @@ body{
 .details{
     position: relative;
     width: 100%;
-    padding: 20px;
+    padding: 10px;
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 5px;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 10px;
     /* margin-top: 5px; */
 }
-.details .recentOrders{
+.details .listlenhnhapxuat,
+.details .editlnx {
     position: relative;
     display: grid;
-    min-height: 200px;
+    min-height: 50px;
     background: var(--white);
     padding: 20px;
     box-shadow: 0 7px 25px rgb(0, 0, 0, 0.08);
     border-radius: 20px;
 }
+/* .editlnx{
+    position: relative;
+    display: grid;
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgb(0, 0, 0, 0.08);
+    border-radius: 20px;
+} */
 .details .cardHeader{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+}
+.cardHeader2 h2{
+    font-weight: 600;
+    color: var(--blue);
 }
 .cardHeader h2{
     font-weight: 600;
@@ -290,30 +305,30 @@ body{
 .details table{
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
+    
 }
 .details table thead td{
     font-weight: 600;
     font-size: 15px;
 }
-.details .recentOrders table tr{
+.details .listlenhnhapxuat table tr{
     color: var(--black1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     
 }
-.details .recentOrders table tr:last-child{
+.details .listlenhnhapxuat table tr:last-child{
     border-bottom: none;
 }
-.details .recentOrders table tbody tr:hover{
+.details .listlenhnhapxuat table tbody tr:hover{
     background: var(--blue);
     color: var(--white);
 }
-.details .recentOrders table tr td{
+.details .listlenhnhapxuat table tr td{
     padding: 10px;
 }
-.details .recentOrders table tr td:last-child{
+/* .details .listlenhnhapxuat table tr td:last-child{
     text-align: end;
-}
+} */
 /* .details .recentOrders table tr td:nth-child(2){
     text-align: end;
 }
@@ -369,7 +384,7 @@ body{
 #contact {
 	background:#F9F9F9;
 	padding:25px;
-	margin:50px 0;
+	margin:10px 0;
 }
 
 #contact h3 {
@@ -450,3 +465,131 @@ fieldset {
 :-ms-input-placeholder {
  color:#888;
 }
+
+.button-edit-delete {
+    padding: 3px 3px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 3px -2px rgba(0,0,0,0.5);
+    line-height: 1.25;
+    background: #FC6E51;
+    text-decoration: none;
+    user-select: none;
+    color: white;
+    font-size: 10px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    position: relative;
+    transition: background-color .6s ease;
+    overflow: hidden;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 50%;
+      left: 50%;
+      top: var(--mouse-y);
+      left: var(--mouse-x);
+      transform-style: flat;
+      transform: translate3d(-50%,-50%,0);
+      background: rgba(white,.1);
+      border-radius: 100%;
+      transition: width .3s ease, height .3s ease;
+    }
+    &:focus,
+    &:hover {
+        background: darken(#FC6E51,7%);
+    }
+    &:active {
+      &:after {
+        width: 300px;
+        height: 300px;
+      }
+    }
+  }
+.d-none{
+    display: none;
+}
+
+/* button createlnx */
+.container-btn-createlnx {
+    position: absolute;
+    /* top:50%;
+    left:50%; */
+    /* margin-left: -65px;
+    margin-top: -20px; */
+    width: auto;
+    height: 40px;
+    /* text-align: center; */
+  }
+  button {
+    outline: none;
+    height: 40px;
+    text-align: center;
+    width: 130px;
+    border-radius: 40px;
+    background: #fff;
+    border: 2px solid #1ECD97;
+    color: #1ECD97;
+    letter-spacing: 1px;
+    text-shadow: 0;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  button:hover {
+    color: white;
+    background: #1ECD97;
+  }
+  button:active {
+    letter-spacing: 2px;
+  }
+  button:after {
+    content: "SUBMIT";
+  }
+  
+  .onclic {
+    width: 40px;
+    border-color: #bbbbbb;
+    border-width: 3px;
+    font-size: 0;
+    border-left-color: #1ECD97;
+    -webkit-animation: rotating 2s 0.25s linear infinite;
+            animation: rotating 2s 0.25s linear infinite;
+  }
+  .onclic:after {
+    content: "";
+  }
+  .onclic:hover {
+    color: #1ECD97;
+    background: white;
+  }
+  
+  .validate {
+    font-size: 13px;
+    color: white;
+    background: #1ECD97;
+  }
+  .validate:after {
+    font-family: "FontAwesome";
+    content: "";
+  }
+  
+  @-webkit-keyframes rotating {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes rotating {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }

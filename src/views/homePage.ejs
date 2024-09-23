@@ -125,15 +125,17 @@
                 </div>
                 <!-- Order Detail List -->
                 <div class="details">
-                    <div class="recentOrders">
+                    <div class="listlenhnhapxuat">
                         <div class="cardHeader">
-                            <h2>Recent Order</h2>
+                            <h2>List Lệnh Nhập Xuất</h2>
                             <a href="#" class="btn">View All</a>
                         </div>
 
                         <table>
-                            <%= JSON.stringify(listLnx) %>
+                            
+                            
                             <thead>
+
                                 <tr>
                                     <td>Khách hàng</td>
                                     <td>Loại nhập xuất</td>
@@ -144,35 +146,93 @@
                                     <td>Trọng lượng</td>
                                     <td>Đơn giá</td>
                                     <td>CBKD</td>
+                                    <td>Status</td>
                                     <td>Edit</td>
                                     <td>Delete</td>
-                                    <td>Status</td>
+                                    
 
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Star Refrigerator</td>
-                                    <td>$1200</td>
-                                    <td>Paid</td>
-                                    <td>Paid</td>
-                                    <td>Paid</td>
-                                    <td>Paid</td>
-                                    <td>Paid</td>
-                                    <td>Paid</td>
-                                    <td>Paid</td>
-                                    <td><button>Edit</button></td>
-                                    <td><button>Delete</button></td>
-                                    <td><span class="status delivered">Delivered</span></td>
-                                    <!-- <td><span class="status pending">Pending</span></td> -->
-                                    <!-- <td><span class="status return">Return</span></td> -->
-                                    <!-- <td><span class="status inprogress">In Progress</span></td> -->
-                                </tr>
-
-                                
+                                <% listLnx.forEach(function(lnx){ %>
+                                    <tr>
+                                        <td><%= lnx.khachhang %></td>
+                                        <td><%= lnx.loainhapxuat %></td>
+                                        <td><%= lnx.thoigiannhanhang %></td>
+                                        <td><%= lnx.tenvattu %></td>
+                                        <td><%= lnx.quycach %></td>
+                                        <td><%= lnx.soluong %></td>
+                                        <td><%= lnx.trongluong %></td>
+                                        <td><%= lnx.dongia %></td>
+                                        <td><%= lnx.cbkd %></td>
+                                        <td><span class="status <%= lnx.status %>"><%= lnx.status %></span></td>
+                                        <td><a href="/update/<%= lnx.id %>" class="button-edit-delete" id="button-edit-delete">Edit</a></td>
+                                        <td>
+                                            
+                                            <form action="/delete-lnx/<%= lnx.id %>" method="get" >
+                                                <a href="/delete-lnx/<%= lnx.id %>" class="button-edit-delete" id="button-edit-delete">Delete</a>
+                                            </form>
+                                                
+                                            
+                                            
+                                        </td>
+                                        
+                                        
+                                        <!-- <td><span class="status pending"><%= lnx.status %></span></td>
+                                        <td><span class="status return"><%= lnx.status %></span></td>
+                                        <td><span class="status inprogress"><%= lnx.status %></span></td> -->
+                                    </tr>
+                                    <%});%>
+                                    
                             </tbody>
+                            
                         </table>
                     </div>
+                    <div class="editlnx">
+                        <div class="cardHeader2">
+                            <h2>Create LNX</h2>
+                            <form id="contact" action="/create-lnx" method="post">
+                            <fieldset>
+                              <input placeholder="Tên Khách hàng" type="text" tabindex="1" name="khachhang">
+                            </fieldset>
+                            <fieldset>
+                              <input placeholder="Loại Nhập Xuất" type="text" tabindex="2" name="loainhapxuat">
+                            </fieldset>
+                            <fieldset>
+                              <input placeholder="Thời gian nhận hàng" type="text" tabindex="3" name="thoigiannhanhang">
+                            </fieldset>
+                            <fieldset>
+                                <input placeholder="Tên vật tư" type="text" tabindex="4" name="tenvattu">
+                            </fieldset>
+                            <fieldset>
+                                <input placeholder="Quy Cách" type="text" tabindex="5" name="quycach">
+                            </fieldset>
+                            <fieldset>
+                                <input placeholder="Số lượng" type="text" tabindex="6" name="soluong">
+                            </fieldset>
+                            <fieldset>
+                                <input placeholder="Trọng lượng" type="text" tabindex="7" name="trongluong">
+                            </fieldset>
+                            <fieldset>
+                                <input placeholder="Đơn giá" type="text" tabindex="8" name="dongia">
+                            </fieldset>
+                            <fieldset>
+                                <input placeholder="CBKD" type="text" tabindex="9" name="cbkd">
+                            </fieldset>
+                            <fieldset>
+                                <input placeholder="Status" type="text" tabindex="10" name="status">
+                            </fieldset>
+                            <fieldset>
+                                <div class="container-btn-createlnx">
+                                    <button id="button"></button>
+                                  </div>
+                            </fieldset>
+                            
+                            <!-- <fieldset>
+                              <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                            </fieldset> -->
+                        </form>
+                        </div>
                 </div>
             </div>
     </div>
